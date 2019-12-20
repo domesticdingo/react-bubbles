@@ -13,9 +13,7 @@ useEffect(() => {
   const getColors = () => {
     axiosWithAuth()
       .get(`/api/colors`)
-      .then(res => {
-        setColorList(res.data)
-      })
+      .then(res => setColorList(res.data))
       .catch(err => console.log(err))
   }
   getColors();
