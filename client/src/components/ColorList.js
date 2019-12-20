@@ -20,7 +20,7 @@ const ColorList = ({ colors, updateColors }) => {
     e.preventDefault();
     axiosWithAuth()
       .put(`/api/colors/${colorToEdit.id}`, colorToEdit)
-      .then(res => console.log(res))
+      .then(res => window.location.reload())
       .catch(err => console.log(err))
   };
 
@@ -29,6 +29,7 @@ const ColorList = ({ colors, updateColors }) => {
       .delete(`/api/colors/${color.id}`)
       .then(res =>{
         console.log(res)
+        window.location.reload();
       })
       .catch(err => console.log(err))
   };
